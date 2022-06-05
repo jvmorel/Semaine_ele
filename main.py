@@ -45,340 +45,356 @@ valeurs = {}
 #...Pour envoyer la page html
 ##############################################################################################################
 def send_web_page(conn):
-  html  = """<html>  """
-  html += """      <head>  """
-  html += """      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>  """
-  html += """      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">  """
-  html += """      <link rel="preconnect" href="https://fonts.googleapis.com">  """
-  html += """      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  """
-  html += """      <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  """
-  html += """      <title>Station météo </title>  """
-  html += """      <meta name="viewport" content="width=device-width, initial-scale=1">  """
-  html += """      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  """
-  html += """      <meta http-equiv="refresh" content="5" >  """
-  html += """      <link rel="icon" href="data:,">  """
+  html  = """<html>
+        <head>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <title>Station météo </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="refresh" content="5" >
+        <link rel="icon" href="data:,">
+  """
   conn.sendall(html)
 
   ###############################################################
   #...Definition du style
   ###############################################################
-  html  = """  """
-  html += """      <style>  """
-  html += """          body{  """
-  html += """              background-color: rgba(232, 222, 209, 0.3);  """
-  html += """              font-family: 'Lato', sans-serif;  """
-  html += """              width:75%;  """
-  html += """              margin: auto;  """
-  html += """              text-align: center;  """
-  html += """          }  """
-  html += """  """
-  html += """          p{  """
-  html += """              font-size: 1.5rem;  """
-  html += """  """
-  html += """          }  """
-  html += """  """
-  html += """          h1, h2, h3, h4, h5, h6{  """
-  html += """              font-family: 'Montserrat', sans-serif;  """
-  html += """              text-transform: uppercase;  """
-  html += """              letter-spacing: .3rem;  """
-  html += """          }  """
-  html += """  """
-  html += """          h1{  """
-  html += """              color: #0F3376;  """
-  html += """              margin-top: 5%;  """
-  html += """              font-size: 3rem;  """
-  html += """          }  """
-  html += """  """
-  html += """          h2{  """
-  html += """              font-size: 2rem;  """
-  html += """          }  """
-  html += """  """
-  html += """          /*  """
-  html += """          table{  """
-  html += """          font-size: 2rem;  """
-  html += """          text-align:left;  """
-  html += """          }  """
-  html += """          */  """
-  html += """  """
-  html += """          .insideBox{  """
-  html += """              margin:auto;  """
-  html += """              width=75%;  """
-  html += """              background-color: #fff;  """
-  html += """              padding:5%;  """
-  html += """              margin-bottom: 5%;  """
-  html += """              text-align: center;  """
-  html += """          }  """
-  html += """  """
-  html += """          button{  """
-  html += """              display: inline-block;  """
-  html += """              border: none;  """
-  html += """              border-radius: 4px;  """
-  html += """              margin: 2px;  """
-  html += """              padding: 16px 40px;  """
-  html += """              font-size: 30px;  """
-  html += """              color: white;  """
-  html += """              cursor: pointer;  """
-  html += """          }  """
-  html += """  """
-  html += """          .button{  """
-  html += """              background-color: #e7bd3b;  """
-  html += """          }  """
-  html += """  """
-  html += """          .button2{  """
-  html += """              background-color: #4286f4;  """
-  html += """          }  """
-  html += """  """
-  html += """          .grid-container {  """
-  html += """              display: grid;  """
-  html += """              grid-template-columns: 1fr 1fr;  """
-  html += """              grid-gap: 1%;  """
-  html += """              margin-bottom: 5%;  """
-  html += """          }  """
-  html += """            """
-  html += """          .grid-container-3 {  """
-  html += """              display: grid;  """
-  html += """              grid-template-columns: 1fr 1fr 1fr;  """
-  html += """              grid-gap: 1%;  """
-  html += """              margin-bottom: 5%;  """
-  html += """          }  """
-  html += """  """
-  html += """          .grid-container-4 {  """
-  html += """              display: grid;  """
-  html += """              grid-template-columns: 1fr 1fr 1fr 1fr;  """
-  html += """              grid-gap: 1%;  """
-  html += """              margin-bottom: 5%;  """
-  html += """          }  """
-  html += """  """
-  html += """          .iconIndicator{  """
-  html += """              font-size: 3rem;  """
-  html += """          }  """
-  html += """  """
-  html += """      </style>  """
-  html += """  </head>  """
-  html += """  <body>  """
-  html += """  """
+  html  = """
+        <style>
+            body{
+                background-color: rgba(232, 222, 209, 0.3);
+                font-family: 'Lato', sans-serif;
+                width:75%;
+                margin: auto;
+                text-align: center;
+            }
+  
+            p{
+                font-size: 1.5rem;
+  
+            }
+  
+            h1, h2, h3, h4, h5, h6{
+                font-family: 'Montserrat', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: .3rem;
+            }
+  
+            h1{
+                color: #0F3376;
+                margin-top: 5%;
+                font-size: 3rem;
+            }
+  
+            h2{
+                font-size: 2rem;
+            }
+  
+            /*
+            table{
+            font-size: 2rem;
+            text-align:left;
+            }
+            */
+  
+            .insideBox{
+                margin:auto;
+                width=75%;
+                background-color: #fff;
+                padding:5%;
+                margin-bottom: 5%;
+                text-align: center;
+            }
+  
+            button{
+                display: inline-block;
+                border: none;
+                border-radius: 4px;
+                margin: 2px;
+                padding: 16px 40px;
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+            }
+  
+            .button{
+                background-color: #e7bd3b;
+            }
+  
+            .button2{
+                background-color: #4286f4;
+            }
+  
+            .grid-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 1%;
+                margin-bottom: 5%;
+            }
+            
+            .grid-container-3 {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 1%;
+                margin-bottom: 5%;
+            }
+  
+            .grid-container-4 {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-gap: 1%;
+                margin-bottom: 5%;
+            }
+  
+            .iconIndicator{
+                font-size: 3rem;
+            }
+  
+        </style>
+    </head>
+    <body>
+  """
   conn.sendall(html)
   
   ###############################################################
   #...Affichage du titre
   ###############################################################
-  html  = """  """
-  html += """<!--  """
-  html += """<div class="outsideBox">  """
-  html += """-->  """
-  html += """      <h1><i class="fas fa-cloud-sun"></i> MontMétéo <i class="fas fa-cloud-rain"></i></h1>  """
-  html += """      <h2>Station météo personnelle</h2>  """
-  html += """  """
+  html  = """
+  <!--
+  <div class="outsideBox">
+  -->
+        <h1><i class="fas fa-cloud-sun"></i> MontMétéo <i class="fas fa-cloud-rain"></i></h1>
+        <h2>Station météo personnelle</h2>
+  """
   conn.sendall(html)
 
   ###############################################################
-  html  = """  """
-  html += """      <div class="insideBox">  """
-  html += """          <h3>Données atmosphériques</h3>  """
-  html += """          <div class="grid-container-3">  """
+  html  = """
+        <div class="insideBox">
+            <h3>Données atmosphériques</h3>
+            <div class="grid-container-3">
+  """
   conn.sendall(html)
 
   ###############################################################
   #...Affichage de la lumiere
   ###############################################################
-  html  = """  """
-  html += """              <div>  """
+  html  = """ <div>  """
   #... Cas 1
   if valeurs['lumiere'] == 1 : 
-    html += """                  <i class="fas fa-moon iconIndicator"></i><p>Il fait nuit.</p>  """
+    html += """ <i class="fas fa-moon iconIndicator"></i><p>Il fait nuit.</p> """
   #... Cas 2
   else:
-    html += """                  <i class="fas fa-sun iconIndicator"></i><p>Il fait jour.</p>  """
+    html += """ <i class="fas fa-sun iconIndicator"></i><p>Il fait jour.</p> """
   #... fin cas
-  html += """              </div>  """
+  html += """ </div>  """
   conn.sendall(html)
 
   ###############################################################
   #...Affichage de la sonde de température
   ###############################################################
-  html  = """  """
-  html += """              <div>  """
-  html += """                  <p>  """
+  html  = """
+   <div>
+   <p>
+  """
   #... Cas 1
   if valeurs['temperature'] > 30 : 
-    html += """                      <i class="fas fa-thermometer-full " style="color: #DC143C;font-size: 4rem;"></i>  """
-    html += """                      <br>  """
+    html += """<i class="fas fa-thermometer-full " style="color: #DC143C;font-size: 4rem;"></i>  <br>"""
   #... Cas 2
   elif valeurs['temperature'] >20:
-    html += """                      <i class="fas fa-thermometer-half" style="color: #2ECC71;font-size: 4rem;"></i>  """
-    html += """                      <br>  """
+    html += """<i class="fas fa-thermometer-half" style="color: #2ECC71;font-size: 4rem;"></i>  <br>"""
   #... Cas 3
   else:
-    html += """                      <i class="fas fa-thermometer-quarter" style="color: #85C1E9;font-size: 4rem;"></i>  """
-    html += """                      <br>  """
+    html += """<i class="fas fa-thermometer-quarter" style="color: #85C1E9;font-size: 4rem;"></i>  <br>"""
   #... fin cas
-  html += """                      <span style="font-size: 7rem">%d</span>  """ % (valeurs['temperature'])
-  html += """                      <span style="vertical-align: top;">°C</span>  """
-  html += """                  </p>  """
-  html += """              </div>  """
+  html += f"""
+  <span style="font-size: 7rem">{valeurs['temperature']:0.0f}</span>
+  <span style="vertical-align: top;">°C</span>
+  </p>
+  </div>
+  """
   conn.sendall(html)
 
   ###############################################################
   #...Affichage de la sonde température / pression / altitude
   ###############################################################
-  html  = """  """
-  html += """              <div>  """
-  html += """                  <h4>Sonde</h4>  """
-  html += """                  <p><i class="fas fa-thermometer-half"></i><br> %d °C</p>  """%(valeurs['temperature_bmp180'])
-  html += """                  <p><i class="fas fa-weight-hanging"></i><br> %d hPa</p>  """%(valeurs['pression_bmp180'])
-  html += """                  <p><i class="fas fa-mountain"></i><br> %d m</p>  """%(valeurs['altitude_bmp180'])
-  html += """              </div>  """
-  html += """  """
+  html  = f"""
+  <div>
+  <h4>Sonde</h4>
+  <p><i class="fas fa-thermometer-half"></i><br> {valeurs['temperature_bmp180']:0.0f} °C</p>
+  <p><i class="fas fa-weight-hanging"></i><br> {valeurs['pression_bmp180']/100:0.0f} hPa</p>
+  <p><i class="fas fa-mountain"></i><br> {valeurs['altitude_bmp180']:0.0f} m</p>
+  </div>
+  """
   conn.sendall(html)
 
 
   ###############################################################
-  html  = """  """
-  html += """          </div>  """
-  html += """      </div>  """
-  html += """  """
+  html  = """
+            </div>
+        </div>
+  """
   conn.sendall(html)
 
   ###############################################################
   #...Controle des led depuis la page WEB
   ###############################################################
-  html  = """  """
-  html += """      <div class="grid-container-4">  """
-  html += """          <div class="insideBox">  """
-  html += """              <h3>LED Blanche</h3>  """
-  html += """              <p>   """
-  html += """                  <i class="fas fa-lightbulb" style="color:#FFD700;"></i>  """
-  html += """                  <br><br>  """
-  html += """                  <a href="/?led_blanche=on"><button class="button">ON</button></a>  """
-  html += """              </p>  """
-  html += """              <p>             """
-  html += """                  <i class="fas fa-lightbulb" style="color:#dcdcdc;"></i>  """
-  html += """                  <br><br>  """
-  html += """                  <a href="/?led_blanche=off"><button class="button2">OFF</button></a>  """
-  html += """              </p>  """
-  html += """          </div>  """
-  html += """          <div class="insideBox">  """
-  html += """              <h3>LED Bleue </h3>  """
-  html += """              <p>   """
-  html += """                  <i class="fas fa-lightbulb" style="color:#FFD700;"></i>  """
-  html += """                  <br><br>  """
-  html += """                  <a href="/?led_bleue=on"><button class="button">ON</button></a>  """
-  html += """              </p>  """
-  html += """              <p>             """
-  html += """                  <i class="fas fa-lightbulb" style="color:#dcdcdc;"></i>  """
-  html += """                  <br><br>  """
-  html += """                  <a href="/?led_bleue=off"><button class="button2">OFF</button></a>  """
-  html += """              </p>  """
-  html += """          </div>  """
-  html += """          <div class="insideBox">  """
-  html += """              <h3>LED Rouge </h3>  """
-  html += """              <p>   """
-  html += """                  <i class="fas fa-lightbulb" style="color:#FFD700;"></i>  """
-  html += """                  <br><br>  """
-  html += """                  <a href="/?led_rouge=on"><button class="button">ON</button></a>  """
-  html += """              </p>  """
-  html += """              <p>             """
-  html += """                  <i class="fas fa-lightbulb" style="color:#dcdcdc;"></i>  """
-  html += """                  <br><br>  """
-  html += """                  <a href="/?led_rouge=off"><button class="button2">OFF</button></a>  """
-  html += """              </p>  """
-  html += """          </div>  """
+  html  = """
+        <div class="grid-container-4">
+            <div class="insideBox">
+                <h3>LED Blanche</h3>
+                <p> 
+                    <i class="fas fa-lightbulb" style="color:#FFD700;"></i>
+                    <br><br>
+                    <a href="/?led_blanche=on"><button class="button">ON</button></a>
+                </p>
+                <p>           
+                    <i class="fas fa-lightbulb" style="color:#dcdcdc;"></i>
+                    <br><br>
+                    <a href="/?led_blanche=off"><button class="button2">OFF</button></a>
+                </p>
+            </div>
+            <div class="insideBox">
+                <h3>LED Bleue </h3>
+                <p> 
+                    <i class="fas fa-lightbulb" style="color:#FFD700;"></i>
+                    <br><br>
+                    <a href="/?led_bleue=on"><button class="button">ON</button></a>
+                </p>
+                <p>           
+                    <i class="fas fa-lightbulb" style="color:#dcdcdc;"></i>
+                    <br><br>
+                    <a href="/?led_bleue=off"><button class="button2">OFF</button></a>
+                </p>
+            </div>
+            <div class="insideBox">
+                <h3>LED Rouge </h3>
+                <p> 
+                    <i class="fas fa-lightbulb" style="color:#FFD700;"></i>
+                    <br><br>
+                    <a href="/?led_rouge=on"><button class="button">ON</button></a>
+                </p>
+                <p>           
+                    <i class="fas fa-lightbulb" style="color:#dcdcdc;"></i>
+                    <br><br>
+                    <a href="/?led_rouge=off"><button class="button2">OFF</button></a>
+                </p>
+            </div>
+  """
   conn.sendall(html)
 
   ###############################################################
   #...Controle du buzzer depuis la page WEB
   ###############################################################
-  html  = """  """
-  html += """          <div class="insideBox">  """
-  html += """              <p>  """
-  html += """              <h3>Buzzer </h3>  """
-  html += """              <p>  """
-  html += """                  <i class="fas fa-bullhorn" style="color:#FF6347;"></i>  """
-  html += """                  <br><br>  """
-  html += """                  <a href="/?buz=on"><button class="button">ON</button></a>  """
-  html += """              </p>  """
-  html += """              <p>  """
-  html += """                  <i class="fas fa-bullhorn" style="color:#dcdcdc;"></i>  """
-  html += """                  <br><br>  """
-  html += """                  <a href="/?buz=off"><button class="button2">OFF</button></a>  """
-  html += """              </p>  """
-  html += """          </div>  """
+  html  = """
+            <div class="insideBox">
+                <p>
+                <h3>Buzzer </h3>
+                <p>
+                    <i class="fas fa-bullhorn" style="color:#FF6347;"></i>
+                    <br><br>
+                    <a href="/?buz=on"><button class="button">ON</button></a>
+                </p>
+                <p>
+                    <i class="fas fa-bullhorn" style="color:#dcdcdc;"></i>
+                    <br><br>
+                    <a href="/?buz=off"><button class="button2">OFF</button></a>
+                </p>
+            </div>
+  """
   conn.sendall(html)
 
   ###############################################################
-  html  = """  """
-  html += """      </div>  """
-  html += """  """
+  html  = """
+  </div>
+  """
   conn.sendall(html)
   
 
   ###############################################################
   #...Affichage du capteur d'obstacle
   ###############################################################
-  html  = """  """
-  html += """      <div class="insideBox">  """
-  html += """          <h3>Détection</h3>  """
-  html += """          <div class="grid-container-3">  """
-  html += """              <div>  """
+  html  = """
+        <div class="insideBox">
+            <h3>Détection</h3>
+            <div class="grid-container-3">
+                <div>
+  """
   #... Cas 1
   if  valeurs['obstacle'] == 0 : 
-    html += """                  <i class="fas fa-exclamation iconIndicator"></i>   """
-    html += """                  <p>Quelque chose est situé devant le détecteur.</p>  """
+    html += """ <i class="fas fa-exclamation iconIndicator"></i> 
+                <p>Quelque chose est situé devant le détecteur.</p>
+            """
   #... Cas 2
   else:
-    html += """                  <i class="fas fa-times iconIndicator"></i>  """
-    html += """                  <p>Il n'y a rien devant le détecteur.</p>  """
+    html += """ <i class="fas fa-times iconIndicator"></i>
+                <p>Il n'y a rien devant le détecteur.</p>
+            """
   #... fin cas
-  html += """  """
-  html += """              </div>  """
+  
+  html += """ 
+  </div>
+  """
   conn.sendall(html)
   
   ###############################################################
   #...Affichage de l'état du bouton
   ###############################################################
-  html  = """  """
-  html += """              <div>  """
+  html  = """
+                <div>
+            """
   #... Cas 1
   if valeurs['bouton'] == 1: 
-    html += """                  <i class="fas fa-exclamation iconIndicator"></i>   """
-    html += """                  <p>Le bouton est appuyé.</p>  """
+    html += """ <i class="fas fa-exclamation iconIndicator"></i> 
+                <p>Le bouton est appuyé.</p>
+            """
   #... Cas 2
   else:
-    html += """                  <i class="fas fa-times iconIndicator"></i>  """
-    html += """                  <p>Le bouton n'est pas appuyé.</p>  """
+    html += """ <i class="fas fa-times iconIndicator"></i>
+                <p>Le bouton n'est pas appuyé.</p>
+            """
   #... fin cas
-  html += """  """
-  html += """              </div>  """
+  html += """ 
+  </div>
+  """
   conn.sendall(html)
 
   ###############################################################
   #...Affichage du détecteur de mouvement
   ###############################################################
-  html  = """  """
-  html += """              <div>  """
+  html  = """
+                <div>
+            """
   #... Cas 1
   if valeurs['mouvement'] == 1: 
-    html += """                  <i class="fas fa-exclamation iconIndicator"></i>   """
-    html += """                  <p>Mouvement détecté.</p>  """
+    html += """ <i class="fas fa-exclamation iconIndicator"></i> 
+                <p>Mouvement détecté.</p>
+    """
   #... Cas 2
   else:
-    html += """                  <i class="fas fa-times iconIndicator"></i>  """
-    html += """                  <p>Il n'y a pas de mouvement.</p>  """
+    html += """ <i class="fas fa-times iconIndicator"></i>
+                <p>Il n'y a pas de mouvement.</p>
+    """
   #... fin cas
-  html += """  """
-  html += """              </div>  """
+  html += """ 
+  </div>
+  """
   conn.sendall(html)
 
   ###############################################################
   #...fin
   ###############################################################
-  html  = """  """
-  html += """          </div>  """
-  html += """      </div>  """
-  html += """  """
-  html += """  </body>  """
-  html += """</html>  """
-  html += """  """
+  html  = """
+            </div>
+        </div>
+  
+    </body>
+  </html>
+  """
   conn.sendall(html)
   return
 
@@ -386,7 +402,7 @@ def send_web_page(conn):
 ##############################################################################################################
 #...Pour gerer les requestes
 ##############################################################################################################
-def client_handler(client_obj)client_handler(client_obj):
+def client_handler(client_obj):
   
   poller = select.poll()
   poller.register(client_obj, select.POLLIN)
@@ -455,26 +471,18 @@ def Serveur_web_Thread():
 #
 ##############################################################################################################
 #...LED  
-global led_rouge
-global led_blanche
-global led_bleue
 led_rouge   = Pin(2, Pin.OUT)
 led_blanche = Pin(23, Pin.OUT)
 led_bleue   = Pin(17, Pin.OUT)
-#led_rouge.value(1) allume, led_rouge.value(0) eteind
+     #led_rouge.value(1) allume, led_rouge.value(0) eteind
 ##############################################################################################################
 #...Buzzer
-global buzzer
 buzzer = Pin(19, Pin.OUT)
      # buzzer.value(1) allume, buzzer.value(0) eteind
-#frequency = 4000
-#buzzer = PWM(Pin(19), frequency)
-#buzzer.duty(0)
 
 
 ##############################################################################################################
 #...TM1637           | écran 7-Segment à 4 Chiffres 
-global tm
 tm= tm1637.TM1637(clk=Pin(15), dio=Pin(4))
 tm.show('    ')
      # tm.show('10') #display the number 10 on the display
@@ -483,25 +491,21 @@ tm.show('    ')
      
 ##############################################################################################################
 #...                 | Module numérique de capteur d'intensité lumineuse
-global lumiere
 lumiere= Pin(35, Pin.IN, Pin.PULL_DOWN)
      # valeurs['lumiere'] = lumiere.value() # 0 si lumiere, 1 sinon.
 
 ##############################################################################################################
 #...                 | Module numérique de capteur d'intensité lumineuse
-global bouton
 bouton= Pin(16, Pin.IN, Pin.PULL_DOWN)
      # valeurs['bouton'] = bouton.value() # 1 si bouton, 0 sinon.
 
 ##############################################################################################################
 #...                 | IR Module Infrarouge de Capteur D'évitement D'obstacle 
-global obstacle
 obstacle = Pin(27, Pin.IN, Pin.PULL_DOWN)
      # valeurs['obstacle'] = obstacle.value() # 0 si obstacle, 1 sinon.
      
 ##############################################################################################################
 #...HCS-SR505        | Capteur de Mouvement Humain Infrarouge                     
-global mouvement
 mouvement = Pin(14, Pin.IN, Pin.PULL_DOWN)
      # valeurs['mouvement'] = mouvement.value() # 0 si lumiere, 1 sinon.
 
@@ -509,12 +513,10 @@ mouvement = Pin(14, Pin.IN, Pin.PULL_DOWN)
 
 ##############################################################################################################
 #...BMP180           | capteur de température de Pression barométrique 
-#global bus
-#global bmp180
-#bus =  SoftI2C(scl=Pin(22), sda=Pin(21), freq=100000)   # on esp32
-#bmp180= BMP180(bus)
-#bmp180.oversample_sett = 2
-#bmp180.baseline = 101325
+bus =  SoftI2C(scl=Pin(22), sda=Pin(21), freq=100000)   # on esp32
+bmp180= BMP180(bus)
+bmp180.oversample_sett = 2
+bmp180.baseline = 101325
 valeurs['temperature_bmp180'] = 0
 valeurs['pression_bmp180']    = 0
 valeurs['altitude_bmp180']    = 0
@@ -526,8 +528,8 @@ valeurs['altitude_bmp180']    = 0
 #...DS18B20          | kit capteur de température
 ow= onewire.OneWire(Pin(5))
 sonde_temp= ds18x20.DS18X20(ow)
-roms= sonde_temp.scan()
 valeurs['temperature'] = 0
+     # roms= sonde_temp.scan()
      # sonde_temp.convert_temp()
      # time.sleep(0.75)
      # valeurs['temperature'] = sonde_temp.read_temp(roms[0])
@@ -546,11 +548,6 @@ son_analog.width(ADC.WIDTH_9BIT)     # Range 0 to 4095
 bruit= Pin(0, Pin.IN, Pin.PULL_DOWN)
      # valeurs['son_analog']  =  son_analog.read()
      # valeurs['bruit'] =  bruit.value() # 1 si son, 0 sinon.
-def volume_sonore(a):
-  import math
-  v0 = 31
-  #...retourne le volume sonor en decibel
-  return 20*math.log10(a/v0)
 
 ##############################################################################################################
 #
@@ -571,22 +568,23 @@ def Read_FastSensors():
 ##############################################################################################################
 def Read_SlowSensors_Thread():
   while True:
-    time.sleep(3)
     try:
-      sonde_temp.convert_temp()
-      time.sleep(0.9)
-      valeurs['temperature'] = sonde_temp.read_temp(roms[0])
-    except OSError as e:
-      print('Probleme avec la sonde de temperature')
-      pass
+      roms= sonde_temp.scan()
+      if len(roms)>0 :
+        print(roms)
+        sonde_temp.convert_temp()
+        time.sleep(1)
+        valeurs['temperature'] = sonde_temp.read_temp(roms[0])
+      else:
+        print("pas de roms")
 
-    try:
-      valeurs['temperature_bmp180'] = 14.678
-      valeurs['pression_bmp180']    = 101500
-      valeurs['altitude_bmp180']    = 350
+      valeurs['temperature_bmp180'] = bmp180.temperature
+      valeurs['pression_bmp180'] = bmp180.pressure
+      valeurs['altitude_bmp180'] = bmp180.altitude
     except OSError as e:
-      print('Probleme avec la sonde de pression bmp180')
+      print('Probleme avec les sondes lentes')
       pass
+    time.sleep(3)
 
 ##############################################################################################################
 def Onbord_Thread():
@@ -608,9 +606,6 @@ def Onbord_Thread():
 #
 #
 ##############################################################################################################
-global time_Start
-global conn
-global s
 time_Start= time.ticks_ms()
 s= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 conn=  socket.socket(socket.AF_INET, socket.SOCK_STREAM)
