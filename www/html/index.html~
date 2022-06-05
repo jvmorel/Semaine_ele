@@ -1,0 +1,1044 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+    <script>
+      function myFunction(myDiv) {
+	  //var x = document.getElementById("myDIV");
+	  var x = myDiv;
+	  if (x.style.display === "block") {
+	      x.style.display = "none";
+	  } else {
+	      x.style.display = "block";
+	  }
+      }
+    </script>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>La semaine</title>
+    <style type="text/css" media="screen">
+  * {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  body, html {
+    padding: 3px 3px 3px 3px;
+
+    background-color: #D8DBE2;
+
+    font-family: Verdana, sans-serif;
+    font-size: 11pt;
+    text-align: center;
+  }
+
+  div.main_page {
+    position: relative;
+    display: table;
+
+    width: 800px;
+
+    margin-bottom: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 0px 0px;
+
+    border-width: 2px;
+    border-color: #212738;
+    border-style: solid;
+
+    background-color: #FFFFFF;
+
+    text-align: center;
+  }
+
+  div.page_header {
+    height: 99px;
+    width: 100%;
+
+    background-color: #F5F6F7;
+  }
+
+  div.page_header span {
+    margin: 15px 0px 0px 50px;
+
+    font-size: 180%;
+    font-weight: bold;
+  }
+
+  div.page_header img {
+    margin: 3px 0px 0px 40px;
+
+    border: 0px 0px 0px;
+  }
+
+  div.table_of_contents {
+    clear: left;
+
+    min-width: 200px;
+
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.table_of_contents_item {
+    clear: left;
+
+    width: 100%;
+
+    margin: 4px 0px 0px 0px;
+
+    background-color: #FFFFFF;
+
+    color: #000000;
+    text-align: left;
+  }
+
+  div.table_of_contents_item a {
+    margin: 6px 0px 0px 6px;
+  }
+
+  div.content_section {
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.content_section_text {
+    padding: 4px 8px 4px 8px;
+
+    color: #000000;
+    font-size: 100%;
+  }
+
+  div.content_section_text pre {
+    margin: 8px 0px 8px 0px;
+    padding: 8px 8px 8px 8px;
+
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #000000;
+
+    background-color: #F5F6F7;
+
+    font-size: 60%;
+  }
+
+  div.content_section_text p {
+    margin-bottom: 6px;
+  }
+
+  div.content_section_text ul, div.content_section_text li {
+    padding: 4px 8px 4px 16px;
+  }
+
+
+  div.section_to_hide {
+        display: none;
+  }
+  
+  div.section_header {
+    padding: 3px 6px 3px 6px;
+
+    background-color: #8E9CB2;
+
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 112%;
+    text-align: center;
+  }
+
+  div.section_header_red {
+    background-color: #CD214F;
+  }
+
+  div.section_header_grey {
+    background-color: #9F9386;
+  }
+
+  .floating_element {
+    position: relative;
+    float: left;
+  }
+
+  div.table_of_contents_item a,
+  div.content_section_text a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  div.table_of_contents_item a:link,
+  div.table_of_contents_item a:visited,
+  div.table_of_contents_item a:active {
+    color: #000000;
+  }
+
+  div.table_of_contents_item a:hover {
+    background-color: #000000;
+
+    color: #FFFFFF;
+  }
+
+  div.content_section_text a:link,
+  div.content_section_text a:visited,
+   div.content_section_text a:active {
+    background-color: #DCDFE6;
+
+    color: #000000;
+  }
+
+  div.content_section_text a:hover {
+    background-color: #000000;
+
+    color: #DCDFE6;
+  }
+
+  .grid-container-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1%;
+      margin-bottom: 5%;
+  }
+  
+  div.validator {
+  }
+    </style>
+  </head>
+  <body>
+    <div class="main_page">
+      <div class="page_header floating_element">
+        <span class="floating_element">
+          La semaine de l'électronique  </br>
+	  10.133.73.237</br></br>
+        </span>
+      </div>
+
+      <div class="content_section floating_element">
+        <div class="grid-container-2">
+	  <div class="section_header section_header_red">
+	    Le ESP32
+          </div>
+	  <div class="section_header section_header_red">
+	    Accès page web
+          </div>
+	  
+        </div>
+        <div class="grid-container-2">
+	  <div>
+	    <a href="./esp32.png"> <img src="./esp32.png"  alt="GPIO Pins du ESP 32" width=100%> </a>
+	  </div>
+	  <div class="grid-container-2">
+	      <div>
+		<a href="./julien/">   julien  </a>    </br>
+		<a href="./thierry/">  thierry </a>    </br>  
+		<a href="./daniel/">   daniel  </a>    </br>   
+		<a href="./darrel/">   darrel  </a>    </br>   
+		<a href="./hugues/">   hugues  </a>    </br>   
+		<a href="./jules/">    jules   </a>    </br>    
+		<a href="./justin/">   justin  </a>    </br>   
+		<a href="./leo/">      leo     </a>    </br>      
+	      </div>
+	      <div>
+		<a href="./malia/">    malia   </a>        </br>
+		<a href="./mathieu/">  mathieu </a>        </br>
+		<a href="./nicolas/">  nicolas </a>        </br>
+		<a href="./romain/">   romain  </a>        </br>
+		<a href="./suhayb/">   suhayb  </a>        </br>
+		<a href="./timothy/">  timothy </a>        </br>
+		<a href="./tom/">      tom     </a>        </br>  
+		<a href="./wacil/">    wacil   </a>        </br>
+	      </div>
+	  </div>
+	</div>
+	</br>
+ 
+
+
+         <div class="section_header section_header_red">
+           <div id="about"></div>
+           Installation pour le ESP32 avec Thonny
+         </div>
+         <div class="content_section_text">
+	     1. Installer les plug-in ESPTOOL et ESP32 dans Thonny <br>
+	     2. Installer <a href="./esp32-20220117-v1.18.bin"> l'interpréteur</a> sur le esp32 (via Thonny)  <br>
+         </div>
+	 </br>
+	 </br>
+	
+
+
+
+<div class="section_header  section_header_red">
+  <div id="changes"></div>
+  Premier jour : Code pour contrôler les leds et déjà un peu plus ...
+</div>
+
+<button class="section_header" onclick="myFunction(Jour1)"> afficher / cacher la section </button>
+<div class="section_to_hide" id="Jour1">
+  <div class="content_section_text">
+	  1. Sauvegarder la librairie <a href="./bmp180.py"> bmp180 </a> sur le ESP32 via Thonny <br>
+	  2. Sauvegarder la librairie <a href="./hcsr04.py"> hcsr04 </a> sur le ESP32 via Thonny <br>
+	3. Sauvegarder la librairie <a href="./tm1637.py"> tm1637 </a> sur le ESP32 via Thonny <br>
+	  <br>
+  Importation des librairies :
+  <pre>
+##############################################################################################################
+#
+#
+#
+#
+##############################################################################################################
+##  Importation des librairies                                                                              ##
+##############################################################################################################
+#
+#
+#
+##############################################################################################################
+from machine import ADC
+from machine import SoftI2C
+from machine import Pin, PWM
+import random
+import _thread
+import tm1637 
+import usocket as socket
+import uselect as select
+import time
+from hcsr04 import HCSR04
+from bmp180 import BMP180
+import onewire
+import ds18x20
+import re
+import gc
+import usocket as socket
+import uselect as select
+gc.collect()
+  </pre>
+  <br>
+  <br>
+  
+    Définitions nécéssaires : 
+            <pre>
+##############################################################################################################
+#
+#
+#
+#
+##############################################################################################################
+##  Définition des capteurs et initialisation des valeurs                                                   ##
+##############################################################################################################
+#
+#
+##############################################################################################################
+#...Dictionnaire pour stocker les valeurs des capteurs
+global valeurs
+valeurs = {}
+##############################################################################################################
+#...LED  
+global led_blanche
+led_blanche = Pin(23, Pin.OUT)
+global led_bleue
+led_bleue = Pin(17, Pin.OUT)
+global led_rouge
+led_rouge = Pin(2, Pin.OUT)
+#led_blanche.value(1) allume, led_blanche.value(0) eteind
+           </pre>
+  	    <br>
+  <br>
+
+Pour faire clignoter les leds : 
+            <pre>
+while True:
+  led_blanche.value(1)
+  time.sleep(0.1)
+  led_blanche.value(0)
+  time.sleep(0.1)
+  led_bleue.value(1)
+  time.sleep(0.1)
+  led_bleue.value(0)
+  time.sleep(0.1)
+  led_rouge.value(1)
+  time.sleep(0.1)
+  led_rouge.value(0)
+  time.sleep(0.1)
+            </pre>
+  	    <br>
+
+On installe une led bleue sur le GPIO 17. <br>
+On installe une led rouge AVEC UNE RESISTANCE pour la protégée sur le GPIO 2. <br>
+</div>
+</div>
+
+<br>
+<br>
+  <div class="section_header section_header_red" >
+    <div id="changes"></div>
+    Deuxième jour : Faire le mini serveur web
+  </div>
+  
+<button class="section_header" onclick="myFunction(Jour2)"> afficher / cacher la section </button>
+<div class="section_to_hide"  id="Jour2">
+
+  <div class="section_header">
+  <div id="changes"></div>
+  Connexion au wifi
+</div>
+ 
+  <div class="content_section_text">
+    <br>
+  <br>
+  Ficher boot.py à créer sur le ESP32 pour se connecter au reseau :
+  <pre>
+import usocket as socket
+import uselect as select
+from machine import Pin, PWM
+
+import time
+import ubinascii
+import machine
+import micropython
+import network
+import esp
+esp.osdebug(None)
+import gc
+gc.collect()
+
+client_id = ubinascii.hexlify(machine.unique_id())
+station = None
+
+#...Sation mode
+print('Station mode')
+ssid = 'Semaine_ele'
+password = 'Montbrillant'
+station = network.WLAN(network.STA_IF)
+station.active(True)
+station.ifconfig(('192.168.4.5', '255.255.255.0', '192.168.0.254', '192.168.4.1'))
+station.connect(ssid, password)
+while station.isconnected() == False:
+pass
+print('Connection successful')
+print(station.ifconfig())
+  </pre>
+
+
+  <div class="section_header">
+  <div id="changes"></div>
+  Mise en place du serveur WEB
+  </div>
+
+
+<div class="content_section_text">
+  <br>
+<br>
+Fonction faire la page HTML : <a href="./template.html.py"> fonction à coller dans le code après les import</a> <br>
+Page pour trouver les  <a href="https://htmlcolorcodes.com/fr/"> codes couleurs</a><br>
+
+<br>
+<br>
+Fonction pour gerer les requêtes :
+<pre>
+##############################################################################################################
+#...Pour gerer les requestes
+##############################################################################################################
+def client_handler(client_obj):
+  
+  poller = select.poll()
+  poller.register(client_obj, select.POLLIN)
+  res = poller.poll(1000)  # time in milliseconds
+  if not res:
+      return
+  request = client_obj.recv(1024)
+  request = str(request)
+  
+  #...Response
+  client_obj.send('HTTP/1.1 200 OK\n')
+  client_obj.send('Content-Type: text/html\n')
+  client_obj.send('Connection: close\n\n')
+#  Read_FastSensors()
+  send_web_page(client_obj)
+  
+  return
+    
+  </pre>
+<br>
+<br>
+Fonction Pour attendre les requetes HTTP :
+   <pre>
+##############################################################################################################
+#...Pour attendre les requetes HTTP
+##############################################################################################################
+def Serveur_web_Thread():
+  data_interval = 1 #...Time in s between measurment
+  while True:
+
+    #...Request
+    r, w, err = select.select((s,), (), (), data_interval)
+    for readable in r:
+      conn, addr = s.accept()
+      print('Got a connection from %s' % str(addr))
+      try:
+        client_handler(conn)
+        conn.close()
+      except OSError as e:
+        pass
+   </pre>
+
+<br>
+<br>
+Initialisation du serveur web :
+<pre>
+##############################################################################################################
+##  Initialisation du serveur web                                                                           ##
+##############################################################################################################
+#
+#
+##############################################################################################################
+global time_Start
+global conn
+global s
+time_Start= time.ticks_ms()
+s= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+conn=  socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.settimeout(None)
+#s.setblocking(0)
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+s.bind(('', 80))
+s.listen(5)
+for led in [led_rouge]:
+  led.value(1)
+  time.sleep(0.2)
+  led.value(0)
+  time.sleep(0.2)
+  led.value(1)
+  time.sleep(0.2)
+  led.value(0)
+  time.sleep(0.2)
+  led.value(1) 
+  time.sleep(0.2)
+  led.value(0)
+  time.sleep(0.5)
+_thread.start_new_thread(Serveur_web_Thread, ())
+</pre>
+</div>
+
+
+<div class="section_header">
+  <div id="changes"></div>
+  Installation et utilisation d'un buzzer
+</div>
+<div class="content_section_text">
+    
+    Faire un code qui allume toutes les leds pendants 3 secondes<br>
+    puis qui eteind les leds pendant 1 seconde<br>
+    puis qui fait sonner le buzzer (sur la pin 19) pendant 0.5 seconde<br>
+    puis qui fait une boucle infinie qui fait clignoter les leds à tour de rôle<br>
+    <br>
+      Définition du buzzer sur la pin 19 au début du code dans la partie "Définition des capteurs et initialisation des valeurs".
+  <pre>
+##############################################################################################################
+#...Buzzer
+global buzzer
+buzzer = Pin(19, Pin.OUT)
+     # buzzer.value(1) allume, buzzer.value(0) eteind
+  </pre>
+  <br>
+  Utilisation dans le "thread principal"
+  <pre>
+##############################################################################################################
+for led in [led_rouge, led_blanche, led_bleue]:
+  led.value(1)
+time.sleep(3)
+for led in [led_rouge, led_blanche, led_bleue]:
+  led.value(0)
+time.sleep(1)
+buzzer.value(1)
+time.sleep(0.5)
+buzzer.value(0)
+
+while True:
+  for led in [led_rouge, led_blanche, led_bleue]:
+    led.value(1)
+    time.sleep(0.2)
+    led.value(0)
+
+  </pre>
+  </div>
+  </div>
+  </div>
+
+
+
+<br>
+<br>
+  <div class="section_header  section_header_red" >
+    <div id="changes"></div>
+    Troisième jour : On installe les capteurs
+  </div>
+  
+<button class="section_header" onclick="myFunction(Jour3)"> afficher / cacher la section </button>
+<div class="section_to_hide"  id="Jour3">
+  
+<div class="section_header">
+  <div id="changes"></div>
+  Installation et utilisation de capteurs type "on/off" (digital)
+</div>
+<div class="content_section_text">
+    
+  
+  <div class="content_section_text">
+       !!! Alimentation 5 V !!! <br>
+    On installe un capteur de lumière sur le GPIO 35 en mode IN au début du code dans la partie "Définition des capteurs et initialisation des valeurs". <br>
+  <pre>
+##############################################################################################################
+#...Lumiere    
+global lumiere
+lumiere= Pin(35, Pin.IN, Pin.PULL_DOWN)
+valeurs['lumiere'] = 0
+# valeurs['lumiere'] = lumiere.value() # 0 si lumiere, 1 sinon.
+  </pre>
+  <br>
+  Utilisation dans le "thread principal" : Si on ne détecte pas de lumière, on allume la led bleue et on ecrit "Pas de lumière".
+  <pre>
+##############################################################################################################
+while True:
+#...Lumière
+    if lumiere.value() == 1:
+        led_bleue.value(1)
+        print('Pas de lumière')
+        time.sleep(0.2) #...on attend un peu pour ne pas faire le print trop souvent
+    else:
+        led_bleue.value(0) 
+
+</pre>
+</div>
+
+  <div class="content_section_text">
+    On installe ensuite :
+    <ul>
+      <li> un bouton sur la pin 16 </li>
+      <li> un capteur d obstacle sur la pin 27        !!! Alimentation 5 V !!! </li>
+      <li> un capteur de mouvement sur la pin 14    !!! Alimentation 5 V !!! </li>
+      <li> un capteur de bruit sur la pin 0    !!! Alimentation 5 V !!! </li>
+    </ul>
+dans la partie "Définition des capteurs et initialisation des valeurs". <br>
+  <pre>
+##############################################################################################################
+#...Bouton
+global bouton
+bouton= Pin(16, Pin.IN, Pin.PULL_DOWN)
+valeurs['bouton'] = 0
+     # valeurs['bouton'] = bouton.value() # 1 si bouton, 0 sinon.
+
+##############################################################################################################
+#...IR Module Infrarouge de Capteur d évitement d obstacle 
+global obstacle
+obstacle = Pin(27, Pin.IN, Pin.PULL_DOWN)
+valeurs['obstacle'] = 0
+     # valeurs['obstacle'] = obstacle.value() # 0 si obstacle, 1 sinon.
+     
+##############################################################################################################
+#...HCS-SR505        | Capteur de Mouvement Humain Infrarouge                     
+global mouvement
+mouvement = Pin(14, Pin.IN, Pin.PULL_DOWN)
+valeurs['mouvement'] = 0
+     # valeurs['mouvement'] = mouvement.value() # 0 si lumiere, 1 sinon.
+
+##############################################################################################################
+#...KY-038           | Capteur de Son 
+global bruit
+bruit= Pin(0, Pin.IN, Pin.PULL_DOWN)
+valeurs['bruit'] = 0
+     # valeurs['bruit'] =  bruit.value() # 1 si son, 0 sinon.
+
+  </pre>
+  <br>
+  Utilisation dans le "thread principal" : Si on ne détecte quelque chose parmis ces capteurs, on allume la led bleue et on l écrit.
+  <pre>
+##############################################################################################################
+while True:
+    #...Lumière
+    if lumiere.value() == 1:
+        led_bleue.value(1)
+        print('Pas de lumière')
+        time.sleep(0.2)
+    else:
+        led_bleue.value(0) 
+
+    #...Bouton
+    if bouton.value() == 1:
+        led_bleue.value(1)
+        print('On appuie sur le bouton')
+        time.sleep(0.2)
+    else:
+        led_bleue.value(0) 
+
+    #...obstacle
+    if obstacle.value() == 0:
+        led_bleue.value(1)
+        print('Il y a un obstacle')
+        time.sleep(0.2)
+    else:
+        led_bleue.value(0) 
+
+    #...mouvement
+    if mouvement.value() == 1:
+        led_bleue.value(1)
+        print('Il y a un mouvement')
+        time.sleep(2) #...on attend plus longtemps car le capteur met quelques secondes à redescendre
+    else:
+        led_bleue.value(0) 
+
+    #...bruit
+    if bruit.value() == 1:
+        led_bleue.value(1)
+        print('Il y a un bruit')
+        time.sleep(0.2)
+    else:
+        led_bleue.value(0) 
+  </pre>
+  </div>
+
+
+
+
+<div class="section_header">
+  <div id="changes"></div>
+  Installation de la sonde de température ds18x20
+</div>
+
+  <div class="content_section_text">
+    !!! Alimentation 5 V !!! <br>
+    On installe une sonde de température sur la pin 5 via la librairie ds18x20
+    dans la partie "Définition des capteurs et initialisation des valeurs". <br>
+    Avec la page WEB, on utilisera la variable 'valeurs' pour stocker les info de ce capteur. Il faut donc initialiser les valeurs à 0. <br>
+    Il faut ajouter dans la partie "Définition des capteurs et initialisation des valeurs". <br>
+  <pre>
+##############################################################################################################
+#...DS18B20          | kit capteur de température
+global ow
+global sonde_temp
+global roms
+ow= onewire.OneWire(Pin(5))
+sonde_temp= ds18x20.DS18X20(ow)
+roms= sonde_temp.scan()
+valeurs['temperature'] = 0
+     # sonde_temp.convert_temp()
+     # time.sleep(0.75) #...apres chaque mesure avec ce capteur
+     # valeurs['temperature'] = sonde_temp.read_temp(roms[0])
+
+  </pre>
+  <br>
+  Utilisation dans le "thread principal" : On affiche la température toutes les 5 s.
+  <pre>
+##############################################################################################################
+while True:
+  sonde_temp.convert_temp()
+  time.sleep(0.75) #...apres chaque mesure avec ce capteur
+  print('La température est %d °C'%(sonde_temp.read_temp(roms[0])))
+  time.sleep(5)
+  </pre>
+  </div>
+
+
+
+
+
+<div class="section_header">
+  <div id="changes"></div>
+  Installation d'un autre capteur de température et d'un capteur de pression BMP180
+</div>
+
+  <div class="content_section_text">
+    !!! Alimentation 5 V !!! <br>
+    On installe un capteur de pression et de température avec la librairie BMP180 <br>
+    Ce capteur utilise le protocol I2C et nous l'utiliserons avec 22 pour SCL et 21 pour sda. <br>
+    Avec la page WEB, on utilisera la variable 'valeurs' pour stocker les info de ce capteur. Il faut donc initialiser les valeurs à 0. <br>
+    Il faut ajouter dans la partie "Définition des capteurs et initialisation des valeurs". <br>
+  <pre>
+##############################################################################################################
+#...BMP180           | capteur de température de Pression barométrique 
+global bus
+global bmp180
+bus =  SoftI2C(scl=Pin(22), sda=Pin(21), freq=100000)   # on esp32
+bmp180= BMP180(bus)
+bmp180.oversample_sett = 2
+bmp180.baseline = 101325
+valeurs['temperature_bmp180'] = 0
+valeurs['pression_bmp180']    = 0
+valeurs['altitude_bmp180']    = 0
+     # valeurs['temperature_bmp180'] = bmp180.temperature
+     # valeurs['pression_bmp180'] = bmp180.pressure
+     # valeurs['altitude_bmp180'] = bmp180.altitude
+
+  </pre>
+  <br>
+  Utilisation dans le "thread principal" : On affiche la température la pression et l'altitude toutes les 5 s.
+  <pre>
+##############################################################################################################
+while True:
+  print('Temperature = %d °C'%(bmp180.temperature))
+  print('Pression    = %d Pa'%(bmp180.pressure))
+  print('Altitude    = %d m'%(bmp180.altitude))
+  time.sleep(5)
+  </pre>
+  </div>
+
+
+
+
+  
+
+<!--
+<div class="section_header">
+  <div id="changes"></div>
+  Installation d'un capteur de distance HCSR04
+</div>
+
+  <div class="content_section_text">
+    !!! Alimentation 5 V !!! <br>
+    On installe un capteur ultrason capable de mesurer une distance entre 3 cm et 50 cm avec la librairie HCSR40 <br>
+    Ce capteur utilise deux pins, une pour envoyer le signal ultrason, l'autre pour le recevoir. <br>
+    On utilisera la pin 13 pour envoyer (trigger) et la pin 12 pour recevoir (echo). <br>
+    Avec la page WEB, on utilisera la variable 'valeurs' pour stocker les info de ce capteur. Il faut donc initialiser les valeurs à 0. <br>
+    Il faut ajouter dans la partie "Définition des capteurs et initialisation des valeurs". <br>
+  <pre>
+##############################################################################################################
+#...HC-SR04          | Module Ultrason de Capteur de Distance 
+global capteur_distance
+capteur_distance = HCSR04(trigger_pin=13, echo_pin=12,echo_timeout_us=50000)
+valeurs['distance'] = 0
+     # valeurs['distance'] = capteur_distance.distance_cm()
+  </pre>
+  <br>
+  Utilisation dans le "thread principal" : On affiche la distance toutes les 0.5 s.
+  <pre>
+##############################################################################################################
+while True:
+  print('Distance : %d cm'%(capteur_distance.distance_cm()))
+  time.sleep(0.5)
+  </pre>
+  </div>
+-->
+  </div>
+  </div>
+
+
+
+
+
+
+
+<br>
+<br>
+  <div class="section_header  section_header_red" >
+    <div id="changes"></div>
+    Quatrième jour : On interface les capteurs avec la page web
+  </div>
+  
+<button class="section_header" onclick="myFunction(Jour4)"> afficher / cacher la section </button>
+<div class="section_to_hide"  id="Jour4">
+  
+<div class="section_header">
+  <div id="changes"></div>
+  Fonctions pour lire les capteurs "rapides"
+</div>
+    
+  
+  <div class="content_section_text">
+
+    On utilise une fonction pour lire les capteurs "rapides" et stocker les valeurs dans la variable "valeurs".<br>
+    <br>
+
+
+    Fonction pour lire les capteurs "rapides" à mettre sur juste après les définitions des capteurs: <br>
+    <pre>
+##############################################################################################################
+#
+#
+#
+##############################################################################################################
+##  Fonction pour stocker les valeurs des capteurs dans la variable valeurs                                 ##
+##############################################################################################################
+#
+##############################################################################################################
+def Read_FastSensors():
+  valeurs['obstacle']    = obstacle.value() # 0 si obstacle, 1 sinon.
+  valeurs['lumiere']     = lumiere.value()
+  valeurs['bouton']      = bouton.value() # 1 si bouton, 0 sinon.
+  valeurs['mouvement']   = mouvement.value() # 0 si lumiere, 1 sinon.
+  </pre>
+Cette fonction est appellé à chaque requête HTTP dans la fonction client_handler(client_obj). <br>
+Il faut modifier la fonction client_handler(client_obj) comme suit :<br>
+  <pre>
+##############################################################################################################
+#...Pour gerer les requestes
+##############################################################################################################
+def client_handler(client_obj)client_handler(client_obj):
+  .
+  .
+  .
+  .
+  .
+  #...Response
+  client_obj.send('HTTP/1.1 200 OK\n')
+  client_obj.send('Content-Type: text/html\n')
+  client_obj.send('Connection: close\n\n')
+  Read_FastSensors() # <------------------------------------ On ajoute l'appel à la fonction ici 
+  send_web_page(client_obj)
+
+  return
+
+  </pre>
+
+
+
+</div>
+
+<div class="section_header">
+  <div id="changes"></div>
+  Fonctions pour lire les capteurs "lents"
+</div>
+
+  <div class="content_section_text">
+    On utilise une fonction pour lire les capteurs "lents" et stocker les valeurs dans la variable "valeurs".<br>
+    <br>
+    Fonctions pour lire les capteurs "lents", à mettre après cette des capteurs "rapides".
+      <pre>
+##############################################################################################################
+def Read_SlowSensors_Thread():
+  
+  while True:
+    time.sleep(3)
+    try:
+      sonde_temp.convert_temp()
+      time.sleep(0.9)
+      valeurs['temperature'] = sonde_temp.read_temp(roms[0])
+    except OSError as e:
+      print('Probleme avec la sonde de temperature')
+      pass
+
+    try:
+      valeurs['temperature_bmp180'] = 14.678
+      valeurs['pression_bmp180']    = 101500
+      valeurs['altitude_bmp180']    = 350
+    except OSError as e:
+      print('Probleme avec la sonde de pression bmp180')
+      pass
+  </pre>
+
+Cette fonction est appellée dans un thread séparé, que l'on initialise juste avant le thread du serveur WEB. <br>
+Il faut modifier la partie initialisation du serveur pour ajouter l'initialisation du thread, comme suit :<br>
+  <pre>
+##############################################################################################################
+##  Initialisation du serveur web                                                                           ##
+##############################################################################################################
+#
+#
+##############################################################################################################
+global time_Start
+  .
+  .
+  .
+  .
+  .
+_thread.start_new_thread(Read_SlowSensors_Thread, ()) # <----- On ajoute l'initialisation du thread ici 
+time.sleep(0.5)
+_thread.start_new_thread(Serveur_web_Thread, ())
+  </pre>
+
+
+
+
+</div>
+
+<div class="section_header">
+  <div id="changes"></div>
+  Mise à jours de la fonction qui envoie la page WEB
+</div>
+
+  <div class="content_section_text">
+    Mise à jour de la fonction send_web_page(conn) avec cette <a href="./template.html.py"> version </a> <br>
+
+  </div>
+
+ 
+  
+
+
+<div class="section_header">
+  <div id="changes"></div>
+  Gestion des arguments GET dans les requêtes HTTP
+</div>
+
+  <div class="content_section_text">
+    Il faut ajouter dans la page WEB des boutons qui appellent la page avec des arguments.<br>
+    On utilise les lignes qui sont commentées ( et qu'il faut décommentées) dans la fonction send_web_page(conn) <br>
+	<br>
+    Les arguments sont ensuite récupérés et traités par la fonction client_handler(client_obj) :<br>
+      <pre>
+
+def client_handler(client_obj):
+  .
+  .
+  .
+  .
+  .
+  .
+
+  if request.find('/?led_blanche=on') == 6:     # <--------- Ces lignes ici 
+    led_blanche.value(1)                        # <--------- Ces lignes ici 
+  if request.find('/?led_blanche=off') == 6:    # <--------- Ces lignes ici 
+    led_blanche.value(0)                        # <--------- Ces lignes ici 
+  
+  if request.find('/?led_bleue=on') == 6:       # <--------- Ces lignes ici 
+    led_bleue.value(1)			        # <--------- Ces lignes ici 
+  if request.find('/?led_bleue=off') == 6:      # <--------- Ces lignes ici 
+    led_bleue.value(0)			        # <--------- Ces lignes ici 
+  
+  if request.find('/?led_rouge=on') == 6:       # <--------- Ces lignes ici 
+    led_rouge.value(1)			        # <--------- Ces lignes ici 
+  if request.find('/?led_rouge=off') == 6:      # <--------- Ces lignes ici 
+    led_rouge.value(0)			        # <--------- Ces lignes ici 
+  
+  if request.find('/?buz=on')  > 0:             # <--------- Ces lignes ici 
+    buzzer.value(1)			        # <--------- Ces lignes ici 
+  if request.find('/?buz=off') > 0:	        # <--------- Ces lignes ici 
+    buzzer.value(0)			        # <--------- Ces lignes ici 
+  
+  #...Response
+  client_obj.send('HTTP/1.1 200 OK\n')
+  client_obj.send('Content-Type: text/html\n')
+  client_obj.send('Connection: close\n\n')
+  Read_FastSensors()
+  send_web_page(client_obj)
+  
+  return
+
+
+      </pre>
+    </div>
+
+
+<div class="section_header">
+  <div id="changes"></div>
+  Exercices en plus 
+</div>
+
+  <div class="content_section_text">
+  Faire un bouton sur la page web qui fait clignoter les LEDs
+  </div>
+
+
+    
+  </div>
+  </div>
+
+    <div class="validator">
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,204 @@
+##############################################################################################################
+#...Pour envoyer la page html
+##############################################################################################################
+def send_web_page(conn):
+  html = """<html>
+  <head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Station météo </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="refresh" content="2" >
+  <link rel="icon" href="data:,">
+  <style>
+  body{
+  background-color: rgba(232, 222, 209, 0.3);
+  font-family: 'Lato', sans-serif;
+  width:75%;
+  margin: auto;
+  text-align: center;
+  }
+  
+  p{
+  font-size: 1.5rem;
+  }
+  
+  h1, h2, h3, h4, h5, h6{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  }
+  
+  h1{
+  color: #0F3376;
+  margin-top: 5%;
+  font-size: 3rem;
+  }
+  
+  h2{
+  font-size: 2rem;
+  }
+  
+  /*
+  table{
+  font-size: 2rem;
+  text-align:left;
+  }
+  */
+  
+  .insideBox{
+  margin:auto;
+  width=75%;
+  background-color: #fff;
+  padding:5%;
+  margin-bottom: 5%;
+  text-align: center;
+  }
+  
+  button{
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  margin: 2px;
+  padding: 16px 40px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  }
+  
+  .button{
+  background-color: #e7bd3b;
+  }
+  
+  .button2{
+  background-color: #4286f4;
+  }
+  </style>
+
+  </head>
+  <body>
+  <h1>Ma station météo perso</h1> 
+  """
+  conn.sendall(html)
+
+  html = """
+  <div class="insideBox">
+  <h2>Les boutons </h2> """
+  html += """<p><a href="./?led=on"><button class="button">LED ON</button></a>"""
+  html += """<a href="./?led=off"><button class="button2">LED OFF</button></a></p>"""
+  html += """<p><a href="./?buz=on"><button class="button">BUZZER ON</button></a>"""
+  html += """<a href="./?buz=off"><button class="button2">BUZZER OFF</button></a></p>"""
+  html += """</div>"""
+  conn.sendall(html)
+
+
+#  html = """
+#  <div class="insideBox">
+#  <h2>Les mesures du DHT11 </h2> 
+#  <p>
+#  <i class="fas fa-thermometer-half" style="color:#059e8a;"></i> 
+#  température : %d °C<br>
+#  Humidité : %d %%<br>
+#  </p>
+#  </div>
+#  """%(valeurs['temp'],valeurs['hum'])
+#  conn.sendall(html)
+#
+  html = """
+  <div class="insideBox">
+  <i class="fas fa-thermometer-half" style="color:#059e8a;"></i>
+  <h2>Les mesures de la sonde </h2> 
+  <p>
+  température sonde = %d °C<br>
+  </p>
+  </div>
+  """%(valeurs['temperature'])
+  conn.sendall(html)
+
+  html = """
+  <div class="insideBox">
+  <h2>Les mesures du BMP180 </h2> 
+  <p>
+  température = %d °C<br>
+  pression = %d Pa<br>
+  altitude = %d m<br>
+  </p>
+  </div>
+  """%(valeurs['temperature_bmp180'],valeurs['pression_bmp180'],valeurs['altitude_bmp180'])
+  conn.sendall(html)
+
+  html = """
+  <div class="insideBox">
+  <h2>Les mesures des capteurs de distance et de présence </h2> 
+  <p>
+  """
+  if valeurs['distance'] >50:
+    html += """Il n'y a rien devant <br>"""
+  elif valeurs['distance'] >3:
+    html += """Il y a un obstacle à %s cm <br>"""%(valeurs['distance'])
+  else:
+    html += """Il y a un obstacle trop près <br>"""
+  if valeurs['presence'] == 0 :
+    html += """Il y a un truc devant le détecteur <br>"""
+  else:
+    html += """Il y a rien devant le détecteur <br>"""
+  html +="""
+  </p>
+  </div>
+  """
+  conn.sendall(html)
+
+
+  html = """
+  <div class="insideBox">
+  <h2>Les mesures du micro</h2> 
+  <p>
+  """
+  if valeurs['son_digital'] == 1 :
+    html += """Il y a du bruit : %s <br>"""%(valeurs['son_analog'] )
+  else:
+    html += """Il n'y a pas de bruit <br>"""
+  html +="""
+  </p>
+  </div>
+  """
+  conn.sendall(html)
+
+
+  html = """
+  <div class="insideBox">
+  <h2>Les mesures des capteurs de lumière et du bouton</h2> 
+  <p>
+  """
+  if valeurs['lumiere'] == 0:
+    html += """Il fait jour <br>"""
+  else:
+    html += """Il fait nuit <br>"""
+  if valeurs['bouton'] == 1:
+    html += """On appuie <br>"""
+  else:
+    html += """On n'appuie pas <br>"""
+  html +="""
+  </p>
+  </div>
+  """
+  conn.sendall(html)
+
+  
+
+#  if valeurs['gaz_digital'] == 0 :
+#    html = """Il y a du gaz : %s <br>"""%(valeurs['gaz_analog'] )
+#  else:
+#    html = """Il n'y a pas de gaz <br>"""
+#  conn.sendall(html)
+#  
+   
+  html = """
+  </body>
+  </html>"""
+  conn.sendall(html)
+  return html
